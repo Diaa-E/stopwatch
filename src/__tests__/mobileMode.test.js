@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { toggleDeviceMode } from "../utility";
+import { toggleMobileMode } from "../mobileMode";
 import { vi } from "vitest";
 import { fireEvent } from "@testing-library/react";
 
@@ -8,15 +8,15 @@ describe("Device mode", () => {
     it("Does not call setter when screen size is not changed.", () => {
 
         const setterMock = vi.fn();
-        toggleDeviceMode(setterMock);
-        
+        toggleMobileMode(setterMock);
+
         expect(setterMock).not.toHaveBeenCalled();
     });
 
     it("Calls setter when screen size is changed.", () => {
 
         const setterMock = vi.fn();
-        toggleDeviceMode(setterMock);
+        toggleMobileMode(setterMock);
         fireEvent(window, new Event("resize"));
 
         expect(setterMock).toHaveBeenCalled();
@@ -26,7 +26,7 @@ describe("Device mode", () => {
 
         const setterMock = vi.fn();
         setterMock.mockImplementation(() => window.innerWidth <= 700);
-        toggleDeviceMode(setterMock);
+        toggleMobileMode(setterMock);
         window.innerWidth = 500;
         fireEvent(window, new Event("resize"));
 
@@ -37,7 +37,7 @@ describe("Device mode", () => {
 
         const setterMock = vi.fn();
         setterMock.mockImplementation(() => window.innerWidth <= 700)
-        toggleDeviceMode(setterMock);
+        toggleMobileMode(setterMock);
         window.innerWidth = 1500;
         fireEvent(window, new Event("resize"));
 

@@ -1,4 +1,4 @@
-export function toggleDeviceMode(mobileModeSetter)
+export function toggleMobileMode(mobileModeSetter)
 {
     window.addEventListener("resize", () => {
 
