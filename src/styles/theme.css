@@ -1,22 +1,23 @@
 /*Each class is assigned to the app's top component*/
 /*Child components use class names and will update with the top component*/
 
+.common{
+    --danger: #d04848;
+    --icon-danger: filter: invert(43%) sepia(97%) saturate(1683%) hue-rotate(331deg) brightness(86%) contrast(88%);
+}
+
 .dark{
     --bg: #36303a;
     --accent: #83c0c1;
-    --danger: #d04848;
 
     --icon-accent: filter: invert(82%) sepia(6%) saturate(1613%) hue-rotate(132deg) brightness(88%) contrast(88%);
     --icon-bg: filter: invert(16%) sepia(30%) saturate(229%) hue-rotate(232deg) brightness(98%) contrast(92%);
-    --icon-danger: filter: invert(43%) sepia(97%) saturate(1683%) hue-rotate(331deg) brightness(86%) contrast(88%);
 }
 
 .light{
     --bg: #ffffff;
     --accent: #6c22a6;
-    --danger: #d04848;
 
     --icon-accent: filter: invert(12%) sepia(73%) saturate(4090%) hue-rotate(269deg) brightness(104%) contrast(93%);
     --icon-bg: filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
-    --icon-danger: filter: invert(43%) sepia(97%) saturate(1683%) hue-rotate(331deg) brightness(86%) contrast(88%);
 }
