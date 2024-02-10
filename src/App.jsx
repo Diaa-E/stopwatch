@@ -13,7 +13,7 @@ function App({useDarkMode}) {
   toggleMobileMode(mobileModeSetter);
 
   return (
-    <div id='main' role='main' className={`"common" ${darkMode? "dark" : "light"}`}>
+    <div id='main' role='main' className={`common ${darkMode? "dark" : "light"}`}>
 
     </div>
   )
