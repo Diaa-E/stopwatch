@@ -1,4 +1,6 @@
+import { render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
+import App from "../App";
 
 describe("Test library works correctly", () => {
 
@@ -8,5 +10,29 @@ describe("Test library works correctly", () => {
 
     it("False is falsy", () => {
         expect(false).toBe(false);
+    });
+});
+
+describe("App component", () => {
+
+    it("Renders correclty", () => {
+
+        render(<App />);
+
+        expect(screen.getByRole("main")).toBeInTheDocument();
+    });
+
+    it("Uses common class + dark class when passed true for dark mode", () => {
+
+        render(<App useDarkMode={true}/>);
+
+        expect(screen.getByRole("main").classList).toBe(["common", "dark"]);
+    });
+
+    it("Uses common class + light class when passed false for dark mode", () => {
+
+        render(<App useDarkMode={false}/>);
+
+        expect(screen.getByRole("main").classList).toBe(["common", "light"]);
     });
 });
