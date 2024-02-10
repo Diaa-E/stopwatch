@@ -2,6 +2,11 @@ export function toggleMobileMode(mobileModeSetter)
 {
     window.addEventListener("resize", () => {
 
-        mobileModeSetter(window.innerWidth <= 700);
+        mobileModeSetter(isSmallScreen());
     });
+}
+
+export function isSmallScreen()
+{
+    return window.innerWidth <= 700;
 }

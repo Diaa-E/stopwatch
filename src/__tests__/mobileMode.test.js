@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { toggleMobileMode } from "../mobileMode";
+import { toggleMobileMode, isSmallScreen } from "../mobileMode";
 import { vi } from "vitest";
 import { fireEvent } from "@testing-library/react";
 
@@ -25,7 +25,7 @@ describe("Device mode", () => {
     it("Returns true when width is less than 700px", () => {
 
         const setterMock = vi.fn();
-        setterMock.mockImplementation(() => window.innerWidth <= 700);
+        setterMock.mockImplementation(isSmallScreen);
         toggleMobileMode(setterMock);
         window.innerWidth = 500;
         fireEvent(window, new Event("resize"));
@@ -36,7 +36,7 @@ describe("Device mode", () => {
     it("Returns false when width is more than 700px", () => {
 
         const setterMock = vi.fn();
-        setterMock.mockImplementation(() => window.innerWidth <= 700)
+        setterMock.mockImplementation(isSmallScreen)
         toggleMobileMode(setterMock);
         window.innerWidth = 1500;
         fireEvent(window, new Event("resize"));
