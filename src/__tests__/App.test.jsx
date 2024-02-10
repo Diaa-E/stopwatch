@@ -26,13 +26,13 @@ describe("App component", () => {
 
         render(<App useDarkMode={true}/>);
 
-        expect(screen.getByRole("main").classList).toBe(["common", "dark"]);
+        expect(screen.getByRole("main")).toHaveClass("common", "dark");
     });
 
     it("Uses common class + light class when passed false for dark mode", () => {
 
         render(<App useDarkMode={false}/>);
 
-        expect(screen.getByRole("main").classList).toBe(["common", "light"]);
+        expect(screen.getByRole("main")).toHaveClass("common", "light");
     });
 });
