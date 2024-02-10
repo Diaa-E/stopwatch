@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 
-describe("Truthy and Falsy", () => {
+describe("Test library works correctly", () => {
 
     it("True is truthy", () => {
         expect(true).toBe(true);
