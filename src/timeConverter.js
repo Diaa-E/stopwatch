@@ -11,3 +11,10 @@ export function convertFromCS(totalCentiseconds)
         `${seconds < 10 ? "0" + seconds : seconds}.${centiseconds < 10 ? "0" + centiseconds : centiseconds}`
     ]
 }
+
+export function convertToCS(formattedTime)
+{
+    const timeArray = formattedTime.split(":");
+    
+    return ((+timeArray[0] * 60 * 60) + (+timeArray[1] * 60) + (+timeArray[2])) * 100;
+}
