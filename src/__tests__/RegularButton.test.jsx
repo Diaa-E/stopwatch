@@ -1,8 +1,18 @@
 import { render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
 import RegularButton from "../components/RegularButton";
+import userEvent from "@testing-library/user-event";
+import { vi } from "vitest";
 
 describe("RegularButton component", () => {
+
+    function setup(jsx)
+    {
+        return {
+            user: userEvent.setup(),
+            ...render(jsx)
+        };
+    }
 
     it("Renders correctly", () => {
 
@@ -38,5 +48,23 @@ describe("RegularButton component", () => {
         render(<RegularButton danger={false}/>);
 
         expect(screen.getByRole("button")).not.toHaveClass("button-danger");
+    });
+
+    it("Does not call callback when it is not clicked", () => {
+
+        const onClick = vi.fn();
+        const {user} = setup(<RegularButton onClick={onClick}/>);
+
+        expect(onClick).not.toHaveBeenCalled();
+    });
+
+    it("Calls callback when it is clicked", async () => {
+
+        const onClick = vi.fn();
+        const {user} = setup(<RegularButton onClick={onClick}/>);
+        const button = screen.getByRole("button");
+        await user.click(button);
+
+        expect(onClick).toHaveBeenCalled();
     });
 });
