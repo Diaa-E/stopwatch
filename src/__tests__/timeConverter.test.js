@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { convertFromCS, convertToCS, convertToDoubleDigit, convertFromSeconds } from "../timeConverter";
+import { convertFromCS, convertToCS, convertToDoubleDigit, convertFromSeconds, convertToSeconds } from "../timeConverter";
 
 describe("Convert to double digit", () => {
 
@@ -21,83 +21,165 @@ describe("Convert to double digit", () => {
 
 describe("From seconds", () => {
 
-    it("converts centiseconds < 1 min: lower bound -> 00:00:00", () => {
+    it("converts seconds < 1 min: lower bound -> 00:00:00", () => {
 
         expect(convertFromSeconds(0)).toEqual(["00", "00", "00"]);
     });
 
-    it("converts centiseconds < 1 min: single digit -> 00:00:01",() => {
+    it("converts seconds < 1 min: single digit -> 00:00:01",() => {
 
         expect(convertFromSeconds(1)).toEqual(["00", "00", "01"]);
     });
 
-    it("converts centiseconds < 1 min: double digit -> 00:00:11",() => {
+    it("converts seconds < 1 min: double digit -> 00:00:11",() => {
 
         expect(convertFromSeconds(11)).toEqual(["00", "00", "11"]);
     });
 
-    it("converts centiseconds < 1 min: random value -> 00:00:30",() => {
+    it("converts seconds < 1 min: random value -> 00:00:30",() => {
 
         expect(convertFromSeconds(30)).toEqual(["00", "00", "30"]);
     });
 
-    it("converts centiseconds < 1 min: upper bound -> 00:00:59",() => {
+    it("converts seconds < 1 min: upper bound -> 00:00:59",() => {
 
         expect(convertFromSeconds(59)).toEqual(["00", "00", "59"]);
     });
 
     //more than 1 minute ----------------------
 
-    it("Converts 1 minute < centiseconds < 1 hour: lower bound -> 00:01:00", () => {
+    it("Converts 1 minute < seconds < 1 hour: lower bound -> 00:01:00", () => {
 
         expect(convertFromSeconds(60)).toEqual(["00", "01", "00"]);
     });
 
-    it("Converts 1 minute < centiseconds < 1 hour: single digit -> 00:02:00", () => {
+    it("Converts 1 minute < seconds < 1 hour: single digit -> 00:02:00", () => {
 
         expect(convertFromSeconds(60 * 2)).toEqual(["00", "02", "00"]);
     });
 
-    it("Converts 1 minute < centiseconds < 1 hour: double digit -> 00:11:00", () => {
+    it("Converts 1 minute < seconds < 1 hour: double digit -> 00:11:00", () => {
 
         expect(convertFromSeconds(60 * 11)).toEqual(["00", "11", "00"]);
     });
 
-    it("Converts 1 minute < centiseconds < 1 hour: random value -> 00:30:00", () => {
+    it("Converts 1 minute < seconds < 1 hour: random value -> 00:30:00", () => {
 
         expect(convertFromSeconds(60 * 30)).toEqual(["00", "30", "00"]);
     });
 
-    it("Converts 1 minute < centiseconds < 1 hour: upper bound -> 00:59:59", () => {
+    it("Converts 1 minute < seconds < 1 hour: upper bound -> 00:59:59", () => {
 
         expect(convertFromSeconds(60 * 59 + 59)).toEqual(["00", "59", "59"]);
     });
 
     //more than 1 hour ----------------------
 
-    it("Converts 1 hour < centiseconds < 99 hours: lower bound -> 01:00:00", () => {
+    it("Converts 1 hour < seconds < 99 hours: lower bound -> 01:00:00", () => {
 
         expect(convertFromSeconds(60 * 60)).toEqual(["01", "00", "00"]);
     });
 
-    it("Converts 1 hour < centiseconds < 99 hours: single digit -> 02:00:00", () => {
+    it("Converts 1 hour < seconds < 99 hours: single digit -> 02:00:00", () => {
 
         expect(convertFromSeconds(2 * 60 * 60)).toEqual(["02", "00", "00"]);
     });
 
-    it("Converts 1 hour < centiseconds < 99 hours: double digit -> 11:00:00", () => {
+    it("Converts 1 hour < seconds < 99 hours: double digit -> 11:00:00", () => {
 
         expect(convertFromSeconds(11 * 60 * 60)).toEqual(["11", "00", "00"]);
     });
 
-    it("Converts 1 hour < centiseconds < 99 hours: random value -> 30:00:00", () => {
+    it("Converts 1 hour < seconds < 99 hours: random value -> 30:00:00", () => {
 
         expect(convertFromSeconds(30 * 60 * 60)).toEqual(["30", "00", "00"]);
     });
 
-    it("Converts 1 hour < centiseconds < 99 hours: upper bound -> 99:59:59", () => {
+    it("Converts 1 hour < seconds < 99 hours: upper bound -> 99:59:59", () => {
 
         expect(convertFromSeconds((99 * 60 * 60) + (59 * 60) + 59)).toEqual(["99", "59", "59"]);
+    });
+});
+
+describe("To seconds", () => {
+
+    it("converts seconds < 1 min: lower bound -> 00:00:00", () => {
+
+        expect(convertToSeconds("00:00:00")).toBe(0);
+    });
+
+    it("converts seconds < 1 min: single digit -> 00:00:01",() => {
+
+        expect(convertToSeconds("00:00:01")).toBe(1);
+    });
+
+    it("converts seconds < 1 min: double digit -> 00:00:11",() => {
+
+        expect(convertToSeconds("00:00:11")).toBe(11);
+    });
+
+    it("converts seconds < 1 min: random value -> 00:00:30",() => {
+
+        expect(convertToSeconds("00:00:30")).toBe(30);
+    });
+
+    it("converts seconds < 1 min: upper bound -> 00:00:59",() => {
+
+        expect(convertToSeconds("00:00:59")).toEqual(59);
+    });
+
+    //more than 1 minute ----------------------
+
+    it("Converts 1 minute < seconds < 1 hour: lower bound -> 00:01:00", () => {
+
+        expect(convertToSeconds("00:01:00")).toEqual(60);
+    });
+
+    it("Converts 1 minute < seconds < 1 hour: single digit -> 00:02:00", () => {
+
+        expect(convertToSeconds("00:02:00")).toEqual(60 * 2);
+    });
+
+    it("Converts 1 minute < seconds < 1 hour: double digit -> 00:11:00", () => {
+
+        expect(convertToSeconds("00:11:00")).toEqual(60 * 11);
+    });
+
+    it("Converts 1 minute < seconds < 1 hour: random value -> 00:30:00", () => {
+
+        expect(convertToSeconds("00:30:00")).toEqual(60 * 30);
+    });
+
+    it("Converts 1 minute < seconds < 1 hour: upper bound -> 00:59:59", () => {
+
+        expect(convertToSeconds("00:59:59")).toEqual(60 * 59 + 59);
+    });
+
+    //more than 1 hour ----------------------
+
+    it("Converts 1 hour < seconds < 99 hours: lower bound -> 01:00:00", () => {
+
+        expect(convertToSeconds("01:00:00")).toEqual(60 * 60);
+    });
+
+    it("Converts 1 hour < seconds < 99 hours: single digit -> 02:00:00", () => {
+
+        expect(convertToSeconds("02:00:00")).toEqual(2 * 60 * 60);
+    });
+
+    it("Converts 1 hour < seconds < 99 hours: double digit -> 11:00:00", () => {
+
+        expect(convertToSeconds("11:00:00")).toEqual(11 * 60 * 60);
+    });
+
+    it("Converts 1 hour < seconds < 99 hours: random value -> 30:00:00", () => {
+
+        expect(convertToSeconds("30:00:00")).toEqual(30 * 60 * 60);
+    });
+
+    it("Converts 1 hour < seconds < 99 hours: upper bound -> 99:59:59", () => {
+
+        expect(convertToSeconds(("99:59:59"))).toEqual((99 * 60 * 60) + (59 * 60) + 59);
     });
 });
 

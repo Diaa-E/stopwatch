@@ -25,6 +25,13 @@ export function convertFromSeconds(totalSeconds)
     ]
 }
 
+export function convertToSeconds(formattedTime)
+{
+    const timeArray = formattedTime.split(":");
+
+    return ((+timeArray[0] * 60 * 60) + (+timeArray[1] * 60) + (+timeArray[2]));
+}
+
 export function convertToCS(formattedTime)
 {
     const timeArray = formattedTime.split(":");
