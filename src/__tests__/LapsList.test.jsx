@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
 import LapsList from "../components/LapsList";
 
-describe("Lap component", () => {
+describe("LapsList component", () => {
 
     it("Renders correctly", () => {
 
