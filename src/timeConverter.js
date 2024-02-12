@@ -6,9 +6,22 @@ export function convertFromCS(totalCentiseconds)
     const hours = Math.floor(totalCentiseconds / (100 * 60 * 60));
 
     return [
-        `${convertToDoubleDigit(hours)}`,
-        `${convertToDoubleDigit(minutes)}`,
+        convertToDoubleDigit(hours),
+        convertToDoubleDigit(minutes),
         `${convertToDoubleDigit(seconds)}.${convertToDoubleDigit(centiseconds)}`
+    ]
+}
+
+export function convertFromSeconds(totalSeconds)
+{
+    const seconds = totalSeconds % 60;
+    const minutes = Math.floor(totalSeconds / 60) % 60;
+    const hours = Math.floor(totalSeconds / (60 * 60));
+
+    return [
+        convertToDoubleDigit(hours),
+        convertToDoubleDigit(minutes),
+        convertToDoubleDigit(seconds)
     ]
 }
 
