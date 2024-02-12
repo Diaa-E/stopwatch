@@ -1,8 +1,18 @@
 import { render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
 import TabButton from "../components/TabButton";
+import { vi } from "vitest";
+import userEvent from "@testing-library/user-event";
 
 describe("TabButton component", () => {
+
+    function setup(jsx)
+    {
+        return {
+            user: userEvent.setup(),
+            ...render(jsx),
+        }
+    }
 
     it("Renders correctly", () => {
 
@@ -24,5 +34,23 @@ describe("TabButton component", () => {
 
         expect(screen.getByRole("tab").textContent).toBe("click here");
         expect(screen.getByRole("img")).toBeInTheDocument();
+    });
+
+    it("Does not call callback when it is not clicked", () => {
+
+        const onClick = vi.fn();
+        const {user} = setup(<TabButton onClick={onClick}/>);
+
+        expect(onClick).not.toHaveBeenCalled();
+    });
+
+    it("Calls callback when it is clicked", async () => {
+
+        const onClick = vi.fn();
+        const {user} = setup(<TabButton onClick={onClick}/>);
+        const button = screen.getByRole("tab");
+        await user.click(button);
+
+        expect(onClick).toHaveBeenCalled();
     });
 });
