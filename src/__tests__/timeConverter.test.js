@@ -1,5 +1,23 @@
 import { describe, it, expect } from "vitest";
-import { convertFromCS, convertToCS } from "../timeConverter";
+import { convertFromCS, convertToCS, convertToDoubleDigit } from "../timeConverter";
+
+describe("Convert to double digit", () => {
+
+    it("converts single digit to double digit", () => {
+
+        expect(convertToDoubleDigit(0)).toBe("00");
+    });
+
+    it("returns double digit unchanged", () => {
+
+        expect(convertToDoubleDigit(10)).toBe("10");
+    });
+
+    it("returns results as string", () => {
+
+        expect(convertToDoubleDigit(15)).toBeTypeOf("string");
+    });
+});
 
 describe("From centiseconds", () => {
 
