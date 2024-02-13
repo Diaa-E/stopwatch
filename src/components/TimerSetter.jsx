@@ -1,4 +1,5 @@
-import { useState } from "react"
+import { useState } from "react";
+import RegularButton from "./RegularButton";
 
 export default function TimerSetter({formattedTime, onSubmit})
 {
@@ -8,36 +9,42 @@ export default function TimerSetter({formattedTime, onSubmit})
 
     return (
         <form onSubmit={onSubmit} role="form" action="">
-            <input
-                id="hours"
-                maxLength={2}
-                onChange={e => setHrs(e.target.value)}
-                role="input"
-                type="number"
-                value={hrs}
-
-                data-testid="hours"
-            />
-            <input
-                id="minutes"
-                maxLength={2}
-                onChange={e => setMins(e.target.value)}
-                role="input"
-                type="number"
-                value={mins}
-
-                data-testid="minutes"
-            />
-            <input
-                id="seconds"
-                maxLength={2}
-                onChange={e => setSecs(e.target.value)}
-                role="input"
-                type="number"
-                value={secs}
-
-                data-testid="seconds"
-            />
+            <div>
+                <input
+                    id="hours"
+                    maxLength={2}
+                    onChange={e => setHrs(e.target.value)}
+                    role="input"
+                    type="number"
+                    value={hrs}
+                    data-testid="hours"
+                />
+                <input
+                    id="minutes"
+                    maxLength={2}
+                    onChange={e => setMins(e.target.value)}
+                    role="input"
+                    type="number"
+                    value={mins}
+                    data-testid="minutes"
+                />
+                <input
+                    id="seconds"
+                    maxLength={2}
+                    onChange={e => setSecs(e.target.value)}
+                    role="input"
+                    type="number"
+                    value={secs}
+                    data-testid="seconds"
+                />
+                <RegularButton
+                    text={"Start"}
+                    iconPath={""}
+                    danger={false}
+                    onClick={() => {}}
+                    type="submit"
+                />
+            </div>
         </form>
     )
 }
