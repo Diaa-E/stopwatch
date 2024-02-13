@@ -4,6 +4,7 @@
 .common{
     --danger: #d04848;
     --icon-danger: filter: invert(43%) sepia(97%) saturate(1683%) hue-rotate(331deg) brightness(86%) contrast(88%);
+    --color-transition: .3s;
 }
 
 .dark{

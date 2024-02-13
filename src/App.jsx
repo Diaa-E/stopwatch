@@ -7,7 +7,7 @@ import NavBar from './components/NavBar';
 import { tabs } from './tabs';
 
 function App({useDarkMode}) {
-  
+
   const [mobileMode, setMobileMode] = useState(isSmallScreen());
   const [darkMode, setDarkMode] = useState(useDarkMode);
   const [activeTab, setActiveTab] = useState(tabs.stopwatch);
@@ -25,7 +25,7 @@ function App({useDarkMode}) {
   }
 
   return (
-    <div id='main' role='main' className={`common ${darkMode? "dark" : "light"}`}>
+    <div id='main' role='main' className={`common ${darkMode? "dark" : "light"} main`}>
       <NavBar
         darkMode={darkMode}
         toggleDarkMode={toggleDarkMode}

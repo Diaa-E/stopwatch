@@ -6,3 +6,16 @@
   justify-content: center;
   width: 100dvw;
 }
+
+.main{
+  background-color: var(--bg);
+  height: 100dvh;
+  width: 100dvw;
+  display: flex;
+  flex-direction: flex-start;
+  justify-content: center;
+  align-content: flex-start;
+  align-items: flex-start;
+  justify-items: flex-start;
+  transition-duration: var(--color-transition);
+}
