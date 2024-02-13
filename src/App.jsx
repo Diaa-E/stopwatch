@@ -5,10 +5,10 @@ import "./styles/theme.css";
 import { isSmallScreen, toggleMobileMode } from './mobileMode';
 
 function App({useDarkMode}) {
-  const [mobileMode, mobileModeSetter] = useState(isSmallScreen());
+  const [mobileMode, setMobileMode] = useState(isSmallScreen());
   const [darkMode, setDarkMode] = useState(useDarkMode);
 
-  toggleMobileMode(mobileModeSetter);
+  toggleMobileMode(setMobileMode);
 
   return (
     <div id='main' role='main' className={`common ${darkMode? "dark" : "light"}`}>
