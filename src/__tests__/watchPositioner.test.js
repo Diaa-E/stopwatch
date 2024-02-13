@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { getHandAngle } from "../watchPositioner";
+import { getHandAngle, getHourglassHeight } from "../watchPositioner";
 
 describe("Hand angle", () => {
 
@@ -16,5 +16,23 @@ describe("Hand angle", () => {
     it("Return 1.25 turns for 1 hour and 15 minutes", () => {
 
         expect(getHandAngle((60 * 60 * 100) + (15 * 60 * 100), 60 * 60 * 100)).toBe(1.25);
+    });
+});
+
+describe("Hourglass sand height", () => {
+
+    it("Returns 100 top, 0 bottom for 0 seconds", () => {
+
+        expect(getHourglassHeight(0, 60 * 60)).toEqual({top: 100, bottom: 0});
+    });
+
+    it("Returns 80 top, 20 bottom for 20 seconds out of 00:01:40 timer", () => {
+
+        expect(getHourglassHeight(20, 100)).toEqual({top: 80, bottom: 20});
+    });
+
+    it("Returns 0 top, 100 bottom when timer ends", () => {
+
+        expect(getHourglassHeight(100, 100)).toEqual({top: 0, bottom: 100});
     });
 });
