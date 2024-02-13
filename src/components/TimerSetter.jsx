@@ -13,6 +13,8 @@ export default function TimerSetter({formattedTime, onSubmit})
                 <input
                     id="hours"
                     maxLength={2}
+                    minLength={2}
+                    required
                     onChange={e => setHrs(e.target.value)}
                     role="input"
                     type="number"
@@ -22,6 +24,8 @@ export default function TimerSetter({formattedTime, onSubmit})
                 <input
                     id="minutes"
                     maxLength={2}
+                    minLength={2}
+                    required
                     onChange={e => setMins(e.target.value)}
                     role="input"
                     type="number"
@@ -31,6 +35,8 @@ export default function TimerSetter({formattedTime, onSubmit})
                 <input
                     id="seconds"
                     maxLength={2}
+                    minLength={2}
+                    required
                     onChange={e => setSecs(e.target.value)}
                     role="input"
                     type="number"
