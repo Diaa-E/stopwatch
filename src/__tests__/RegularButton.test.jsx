@@ -67,4 +67,12 @@ describe("RegularButton component", () => {
 
         expect(onClick).toHaveBeenCalled();
     });
+
+    it("Uses type from props", () => {
+
+        render(<RegularButton text={"click here"} danger={false} type="submit" />);
+
+        expect(screen.getByRole("submit")).toBeInTheDocument();
+        expect(screen.queryByRole("button")).toBe(null);
+    });
 });
