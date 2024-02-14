@@ -36,6 +36,13 @@ describe("TabButton component", () => {
         expect(screen.getByRole("img")).toBeInTheDocument();
     });
 
+    it("Has the active css class when active prop is true", () => {
+
+        render(<TabButton text={"click here"} active={true}/>);
+
+        expect(screen.getByRole("tab")).toHaveClass("active");
+    });
+
     it("Does not call callback when it is not clicked", () => {
 
         const onClick = vi.fn();
