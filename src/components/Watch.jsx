@@ -1,3 +1,5 @@
+import "../styles/Watch.css";
+
 import { convertFromCS } from "../timeConverter";
 
 export default function Watch({time})
@@ -6,7 +8,12 @@ export default function Watch({time})
 
     for (let i = 0; i < 60; i++)
     {
-        markers.push(<div key={i} data-testid="marker" className="marker"></div>)
+        markers.push(<div 
+                        key={i}
+                        data-testid="marker"
+                        className="marker"
+                        style={{transform: ` rotateZ(${i * 6}deg) translateX(170px)`}}
+                    ></div>)
     }
 
     return (
@@ -15,7 +22,7 @@ export default function Watch({time})
                 markers
             }
             <div data-testid="hand" className="hand"></div>
-            <p data-testid="time ">{convertFromCS(time).join(":")}</p>
+            <p className="watch-time" data-testid="time ">{convertFromCS(time).join(":")}</p>
         </div>
     )
 }

@@ -12,10 +12,11 @@
   height: 100dvh;
   width: 100dvw;
   display: flex;
-  flex-direction: flex-start;
-  justify-content: center;
-  align-content: flex-start;
-  align-items: flex-start;
+  flex-direction: column;
+  flex-direction: center;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
   justify-items: flex-start;
   transition-duration: var(--color-transition);
 }
