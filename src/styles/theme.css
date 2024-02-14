@@ -12,8 +12,8 @@
     --accent: #83c0c1;
     --placeholder: #505b5b;
 
-    --icon-accent: filter: invert(82%) sepia(6%) saturate(1613%) hue-rotate(132deg) brightness(88%) contrast(88%);
-    --icon-bg: filter: invert(16%) sepia(30%) saturate(229%) hue-rotate(232deg) brightness(98%) contrast(92%);
+    --icon-accent: invert(82%) sepia(6%) saturate(1613%) hue-rotate(132deg) brightness(88%) contrast(88%);
+    --icon-bg: invert(16%) sepia(30%) saturate(229%) hue-rotate(232deg) brightness(98%) contrast(92%);
 }
 
 .light{
@@ -21,6 +21,6 @@
     --accent: #6c22a6;
     --placeholder: #d6adf6;
 
-    --icon-accent: filter: invert(12%) sepia(73%) saturate(4090%) hue-rotate(269deg) brightness(104%) contrast(93%);
-    --icon-bg: filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+    --icon-accent: invert(12%) sepia(73%) saturate(4090%) hue-rotate(269deg) brightness(104%) contrast(93%);
+    --icon-bg: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
 }

@@ -1,0 +1,9 @@
+.nav-bar{
+    width: 100dvw;
+    display: grid;
+    gap: 20px;
+    padding: 10px;
+    grid-auto-flow: column;
+    place-items: stretch;
+    place-content: stretch;
+}

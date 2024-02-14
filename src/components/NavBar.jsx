@@ -1,6 +1,7 @@
 import TabButton from "./TabButton";
 import { iconBarrel } from "../iconBarrel";
 import { tabs } from "../tabs";
+import "../styles/NavBar.css";
 
 export default function NavBar({changeActiveTab, darkMode, toggleDarkMode})
 {
