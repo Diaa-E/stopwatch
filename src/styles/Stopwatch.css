@@ -5,3 +5,10 @@
     height: calc(170px * 3);
     width: calc(170px * 3);
 }
+
+.stopwatch-controls{
+    display: flex;
+    place-content: center;
+    place-items: center;
+    gap: 20px;
+}

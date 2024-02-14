@@ -1,0 +1,43 @@
+.button{
+    display: flex;
+    background-color: var(--bg);
+    color: var(--accent);
+    border: solid var(--accent) 3px;
+    border-radius: 10px;
+    padding: 5px;
+    width: 150px;
+    gap: 10px;
+    place-content: center;
+    place-items: center;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.button:hover{
+    background-color: var(--accent);
+    color: var(--bg);
+}
+
+.button>img{
+    will-change: filter;
+    filter: var(--icon-accent);
+    height: 20px;
+    cursor: pointer;
+}
+
+.button:hover>img{
+    filter: var(--icon-bg);
+}
+
+.button-danger{
+    color: var(--danger);
+    border: solid var(--danger) 3px;
+}
+
+.button-danger:hover{
+    background-color: var(--danger);
+}
+
+.button-danger>img{
+    filter: var(--icon-danger);
+}

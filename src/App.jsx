@@ -39,6 +39,8 @@ function App({useDarkMode}) {
         activeTab === tabs.stopwatch && 
         <Stopwatch
           time={stopwatchTime}
+          paused={stopwatchPaused}
+          togglePause={() => setStopwatchPaused(stopwatchPaused => !stopwatchPaused)}
         />
       }
     </div>
