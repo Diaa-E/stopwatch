@@ -3,7 +3,7 @@ import Watch from "./Watch";
 import RegularButton from "./RegularButton";
 import { iconBarrel } from "../iconBarrel";
 
-export default function Stopwatch({time, paused, togglePause})
+export default function Stopwatch({time, paused, togglePause, reset})
 {
     return (
         <>
@@ -34,7 +34,7 @@ export default function Stopwatch({time, paused, togglePause})
                         danger={true}
                         iconPath={iconBarrel.reset}
                         text={"Reset"}
-                        onClick={() => {}}
+                        onClick={reset}
                     />
                 }
             </div>

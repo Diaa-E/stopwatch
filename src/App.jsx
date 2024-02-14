@@ -54,6 +54,10 @@ function App({useDarkMode}) {
           time={stopwatchTime}
           paused={stopwatchPaused}
           togglePause={() => setStopwatchPaused(stopwatchPaused => !stopwatchPaused)}
+          reset={() => {
+            setStopwatchPaused(true);
+            setStopwatchTime(0);
+          }}
         />
       }
     </div>
