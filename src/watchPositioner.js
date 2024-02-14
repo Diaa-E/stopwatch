@@ -1,6 +1,6 @@
 export function getHandAngle(csCurrent, csCycle)
 {
-    return csCurrent / csCycle;
+    return (csCurrent % csCycle) / csCycle;
 }
 
 export function getHourglassHeight(secCurrent, secMax)

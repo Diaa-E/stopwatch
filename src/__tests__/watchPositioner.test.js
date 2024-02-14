@@ -15,7 +15,7 @@ describe("Hand angle", () => {
 
     it("Return 1.25 turns for 1 hour and 15 minutes", () => {
 
-        expect(getHandAngle((60 * 60 * 100) + (15 * 60 * 100), 60 * 60 * 100)).toBe(1.25);
+        expect(getHandAngle((60 * 60 * 100) + (15 * 60 * 100), 60 * 60 * 100)).toBe(0.25);
     });
 });
 
