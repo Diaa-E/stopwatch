@@ -1,5 +1,15 @@
+@font-face {
+  font-family: "minim";
+  src: url("../assets/fonts/minim.ttf");
+}
+
+@font-face {
+  font-family: "kanit";
+  src: url("../assets/fonts/Kanit-Regular.ttf");
+}
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: kanit, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
