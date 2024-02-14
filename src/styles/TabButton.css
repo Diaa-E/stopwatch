@@ -17,8 +17,10 @@
 }
 
 .tab-button>img{
+    will-change: filter;
     filter: var(--icon-accent);
     height: 30px;
+    cursor: pointer;
 }
 
 .tab-button:hover>img{
