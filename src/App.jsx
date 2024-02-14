@@ -27,6 +27,7 @@ function App({useDarkMode}) {
   return (
     <div id='main' role='main' className={`common ${darkMode? "dark" : "light"} main`}>
       <NavBar
+        activeTab={activeTab}
         darkMode={darkMode}
         toggleDarkMode={toggleDarkMode}
         changeActiveTab={changeActiveTab}

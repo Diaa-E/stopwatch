@@ -26,3 +26,12 @@
 .tab-button:hover>img{
     filter: var(--icon-bg);
 }
+
+.active{
+    background-color: var(--accent);
+    color: var(--bg);
+}
+
+.active>img{
+    filter: var(--icon-bg);
+}

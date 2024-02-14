@@ -3,7 +3,7 @@ import { iconBarrel } from "../iconBarrel";
 import { tabs } from "../tabs";
 import "../styles/NavBar.css";
 
-export default function NavBar({changeActiveTab, darkMode, toggleDarkMode})
+export default function NavBar({activeTab, changeActiveTab, darkMode, toggleDarkMode})
 {
     return (
         <>  
@@ -12,11 +12,13 @@ export default function NavBar({changeActiveTab, darkMode, toggleDarkMode})
                     iconPath={iconBarrel.stopwatch}
                     text={"Stopwatch"}
                     onClick={() => changeActiveTab(tabs.stopwatch)}
+                    active={activeTab === tabs.stopwatch}
                 />
                 <TabButton
                     iconPath={iconBarrel.timer}
                     text={"Timer"}
                     onClick={() => changeActiveTab(tabs.timer)}
+                    active={activeTab === tabs.timer}
                 />
                 <TabButton
                     iconPath={darkMode ? iconBarrel.light : iconBarrel.dark}
@@ -27,6 +29,7 @@ export default function NavBar({changeActiveTab, darkMode, toggleDarkMode})
                     iconPath={iconBarrel.about}
                     text={"About"}
                     onClick={() => changeActiveTab(tabs.about)}
+                    active={activeTab === tabs.about}
                 />
             </nav>
         </>
