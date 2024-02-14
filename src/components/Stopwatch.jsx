@@ -19,18 +19,24 @@ export default function Stopwatch({time, paused, togglePause})
                     text={paused ? "Start" : "Pause"}
                     onClick={togglePause}
                 />
-                <RegularButton
-                    danger={false}
-                    iconPath={iconBarrel.lap}
-                    text={"Lap"}
-                    onClick={() => {}}
-                />
-                <RegularButton
-                    danger={true}
-                    iconPath={iconBarrel.reset}
-                    text={"Reset"}
-                    onClick={() => {}}
-                />
+                {
+                    time > 0 &&
+                    <RegularButton
+                        danger={false}
+                        iconPath={iconBarrel.lap}
+                        text={"Lap"}
+                        onClick={() => {}}
+                    />
+                }
+                {
+                    time > 0 &&
+                    <RegularButton
+                        danger={true}
+                        iconPath={iconBarrel.reset}
+                        text={"Reset"}
+                        onClick={() => {}}
+                    />
+                }
             </div>
         </>
     )
