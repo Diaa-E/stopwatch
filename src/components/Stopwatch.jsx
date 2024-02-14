@@ -16,7 +16,7 @@ export default function Stopwatch({time, paused, togglePause})
                 <RegularButton
                     danger={false}
                     iconPath={paused ? iconBarrel.start : iconBarrel.pause}
-                    text={paused ? "Start" : "Pause"}
+                    text={paused ? time > 0 ? "Resume" : "Start" : "Pause"}
                     onClick={togglePause}
                 />
                 {
