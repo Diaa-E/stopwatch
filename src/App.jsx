@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import "./styles/reset.css";
 import './styles/App.css';
 import "./styles/theme.css";
@@ -26,6 +26,19 @@ function App({useDarkMode}) {
   {
     setActiveTab(tabId);
   }
+
+  useEffect(() => {
+
+    if (stopwatchPaused) return;
+
+    const csInterval = setInterval(() => {
+
+      setStopwatchTime(stopwatchTime => stopwatchTime + 1);
+    }, 10);
+
+    return () => clearInterval(csInterval);
+
+  }, [stopwatchPaused]);
 
   return (
     <div id='main' role='main' className={`common ${darkMode? "dark" : "light"} main`}>
