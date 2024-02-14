@@ -6,7 +6,7 @@ export default function Watch({time})
 
     for (let i = 0; i < 60; i++)
     {
-        markers.push(<div data-testid="marker" className="marker"></div>)
+        markers.push(<div key={i} data-testid="marker" className="marker"></div>)
     }
 
     return (
