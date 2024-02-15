@@ -4,6 +4,7 @@
     place-content: center;
     height: calc(170px * 3);
     width: calc(170px * 3);
+    place-self: center;
 }
 
 .stopwatch-controls{
