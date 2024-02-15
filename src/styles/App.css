@@ -2,8 +2,10 @@
   background-color: var(--bg);
   min-height: 100dvh;
   display: grid;
-  place-items: stretch;
-  place-content: stretch;
+  justify-content: stretch;
+  justify-items: stretch;
+  align-items: flex-start;
+  align-content: stretch;
   margin: auto 0;
   transition-duration: var(--color-transition);
 }
