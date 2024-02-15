@@ -2,8 +2,8 @@
     display: grid;
     place-items: center;
     place-content: center;
-    height: calc(170px * 3);
-    width: calc(170px * 3);
+    height: calc(170px * 2.5);
+    width: calc(170px * 2.5);
     place-self: center;
 }
 

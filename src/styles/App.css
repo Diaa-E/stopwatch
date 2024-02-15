@@ -8,5 +8,6 @@
   align-content: stretch;
   margin: auto 0;
   gap: 30px;
+  padding: 10px;
   transition-duration: var(--color-transition);
 }
