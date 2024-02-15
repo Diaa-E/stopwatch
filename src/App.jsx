@@ -72,12 +72,6 @@ function App({useDarkMode}) {
           addLap={addLap}
         />
       }
-      {
-        activeTab === tabs.stopwatch &&
-        <LapsList
-          laps={laps}
-        />
-      }
     </div>
   )
 }

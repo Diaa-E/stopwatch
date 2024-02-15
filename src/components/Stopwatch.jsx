@@ -5,11 +5,11 @@ import { iconBarrel } from "../iconBarrel";
 import LapsList from "./LapsList";
 import { convertFromCS } from "../timeConverter";
 
-export default function Stopwatch({time, paused, addLap, togglePause, reset})
+export default function Stopwatch({time, paused, laps, addLap, togglePause, reset})
 {
     return (
-        <>
-            <div className="stopwatch">
+        <div className="stopwatch">
+            <div className="watch">
                 <Watch
                     time={time}
                     />
@@ -40,6 +40,9 @@ export default function Stopwatch({time, paused, addLap, togglePause, reset})
                     />
                 }
             </div>
-        </>
+            <LapsList
+                laps={laps}
+            />
+        </div>
     )
 }

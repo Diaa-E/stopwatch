@@ -1,5 +1,11 @@
 .stopwatch{
     display: grid;
+    grid-auto-rows: min-content;
+    gap: 30px;
+}
+
+.watch{
+    display: grid;
     place-items: center;
     place-content: center;
     height: calc(170px * 2.5);
