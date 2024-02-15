@@ -1,0 +1,36 @@
+.timer-setter{
+    display: flex;
+    gap: 30px;
+    place-items: center;
+    place-content: center;
+}
+
+.timer-setter-form{
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    gap: 30px;
+}
+
+.timer-setter-field{
+    font-family: minim;
+    padding: 10px;
+    background-color: var(--bg);
+    color: var(--accent);
+    font-size: 32px;
+    border: solid var(--accent) 3px;
+    border-radius: 10px;
+    width: 80px;
+    cursor: text;
+}
+
+/*Remove input arrows*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}

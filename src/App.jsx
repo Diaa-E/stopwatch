@@ -8,6 +8,7 @@ import { tabs } from './tabs';
 import Stopwatch from './components/Stopwatch';
 import { v4 as generateId } from 'uuid';
 import LapsList from './components/LapsList';
+import Timer from './components/Timer';
 
 function App({useDarkMode}) {
 
@@ -15,6 +16,7 @@ function App({useDarkMode}) {
   const [darkMode, setDarkMode] = useState(useDarkMode);
   const [activeTab, setActiveTab] = useState(tabs.stopwatch);
   const [stopwatchTime, setStopwatchTime] = useState(0);
+  const [countdown, setCountdown] = useState(15 * 60);
   const [stopwatchPaused, setStopwatchPaused] = useState(true);
   const [laps, setLaps] = useState([]);
 
@@ -70,6 +72,12 @@ function App({useDarkMode}) {
           }}
           laps={laps}
           addLap={addLap}
+        />
+      }
+      {
+        activeTab === tabs.timer &&
+        <Timer
+          time={countdown}
         />
       }
     </div>

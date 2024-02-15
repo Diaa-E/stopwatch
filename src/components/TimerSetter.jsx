@@ -1,6 +1,8 @@
+import "../styles/TimerSetter.css";
 import { useState } from "react";
 import RegularButton from "./RegularButton";
 import { convertToDoubleDigit } from "../timeConverter";
+import { iconBarrel } from "../iconBarrel";
 
 export default function TimerSetter({formattedTime, onSubmit})
 {
@@ -16,9 +18,10 @@ export default function TimerSetter({formattedTime, onSubmit})
     }
 
     return (
-        <form onSubmit={onSubmit} role="form" action="">
-            <div>
+        <form className="timer-setter-form" onSubmit={onSubmit} role="form" action="">
+            <div className="timer-setter">
                 <input
+                    className="timer-setter-field"
                     id="hours"
                     onChange={e => setHrs(e.target.value)}
                     onBlur={e => setHrs(correctValue(e, 99))}
@@ -28,6 +31,7 @@ export default function TimerSetter({formattedTime, onSubmit})
                     data-testid="hours"
                 />
                 <input
+                    className="timer-setter-field"
                     id="minutes"
                     onChange={e => setMins(e.target.value)}
                     onBlur={e => setMins(correctValue(e, 59))}
@@ -37,6 +41,7 @@ export default function TimerSetter({formattedTime, onSubmit})
                     data-testid="minutes"
                 />
                 <input
+                    className="timer-setter-field"
                     id="seconds"
                     onChange={e => setSecs(e.target.value)}
                     onBlur={e => setSecs(correctValue(e, 59))}
@@ -45,14 +50,14 @@ export default function TimerSetter({formattedTime, onSubmit})
                     value={secs}
                     data-testid="seconds"
                 />
+            </div>
                 <RegularButton
                     text={"Start"}
-                    iconPath={""}
+                    iconPath={iconBarrel.start}
                     danger={false}
                     onClick={() => {}}
                     type="submit"
                 />
-            </div>
         </form>
     )
 }
