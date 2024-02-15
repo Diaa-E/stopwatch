@@ -66,6 +66,7 @@ function App({useDarkMode}) {
           reset={() => {
             setStopwatchPaused(true);
             setStopwatchTime(0);
+            setLaps([]);
           }}
           laps={laps}
           addLap={addLap}
