@@ -3,9 +3,9 @@ import RegularButton from "./RegularButton";
 
 export default function TimerSetter({formattedTime, onSubmit})
 {
-    const [hrs, setHrs] = useState(formattedTime.split(":")[0]);
-    const [mins, setMins] = useState(formattedTime.split(":")[1]);
-    const [secs, setSecs] = useState(formattedTime.split(":")[2]);
+    const [hrs, setHrs] = useState(formattedTime[0]);
+    const [mins, setMins] = useState(formattedTime[1]);
+    const [secs, setSecs] = useState(formattedTime[2]);
 
     return (
         <form onSubmit={onSubmit} role="form" action="">

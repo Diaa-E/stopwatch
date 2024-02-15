@@ -26,7 +26,7 @@ describe("TimerSetter component", () => {
 
         act(() => {
 
-            render(<TimerSetter formattedTime={"01:15:45"} />);
+            render(<TimerSetter formattedTime={["01", "15", "45"]} />);
         });
 
         expect(screen.getByTestId("seconds").value).toBe("45");
@@ -37,7 +37,7 @@ describe("TimerSetter component", () => {
     it("Calls submit handler when submit button is clicked", async () => {
 
         const onSubmit = vi.fn();
-        const {user} = setup(<TimerSetter formattedTime={"01:15:45"} onSubmit={onSubmit}/>);
+        const {user} = setup(<TimerSetter formattedTime={["01", "15", "45"]} onSubmit={onSubmit}/>);
         const submitButton = screen.getByRole("submit");
         await user.click(submitButton);
 
