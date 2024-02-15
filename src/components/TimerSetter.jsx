@@ -13,7 +13,7 @@ export default function TimerSetter({formattedTime, onSubmit})
     function correctValue(e, upperLimit)
     {
         if (+e.target.value > upperLimit) return upperLimit;
-        if (+e.target.value < 0 || e.target.value === "") return "00";
+        if (+e.target.value < 0 || e.target.value === "" || +e.target.value === 0) return "00";
         return convertToDoubleDigit(e.target.value);
     }
 
