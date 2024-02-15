@@ -1,0 +1,27 @@
+.laps-list{
+    display: flex;
+    flex-direction: column;
+}
+
+.lap-row{
+    display: grid;
+    grid-auto-flow: column;
+    place-self: center;
+    gap: 300px;
+    font-size: 24px;
+    color: var(--accent);
+}
+
+.lap-row:nth-child(even)
+{
+    background-color: var(--accent);
+    color: var(--bg);
+}
+
+.lap-index{
+
+}
+
+.lap{
+    font-family: minim;
+}

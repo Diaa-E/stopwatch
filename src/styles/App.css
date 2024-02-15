@@ -7,5 +7,6 @@
   align-items: flex-start;
   align-content: stretch;
   margin: auto 0;
+  gap: 30px;
   transition-duration: var(--color-transition);
 }

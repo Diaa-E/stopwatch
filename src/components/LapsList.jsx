@@ -1,14 +1,16 @@
+import "../styles/LapsList.css";
+
 export default function LapsList({laps})
 {
     return (
-        <ol>
+        <ol className="laps-list">
             {
                 laps.map((lap, index) => {
                     
                     return (
-                        <li key={lap.id}>
-                            <p>{laps.length - index}.</p>
-                            <p>{lap.value}</p>
+                        <li className="lap-row" key={lap.id}>
+                            <p className="lap-index">{laps.length - index}.</p>
+                            <p className="lap">{lap.value}</p>
                         </li>
                     )
                 })
