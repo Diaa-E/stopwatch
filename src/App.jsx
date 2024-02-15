@@ -33,8 +33,7 @@ function App({useDarkMode}) {
   function addLap(newLap)
   {
     const lapsCopy = [...laps];
-    setLaps([...lapsCopy, {id: generateId(), value: newLap}]);
-    console.log(laps)
+    setLaps([{id: generateId(), value: newLap}, ...lapsCopy]);
   }
 
   useEffect(() => {
