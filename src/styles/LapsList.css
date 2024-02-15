@@ -7,8 +7,9 @@
     display: grid;
     grid-auto-flow: column;
     place-self: center;
-    gap: 300px;
+    place-content: stretch;
     font-size: 24px;
+    min-width: 500px;
     color: var(--accent);
 }
 
@@ -20,4 +21,5 @@
 
 .lap{
     font-family: minim;
+    place-self: flex-end;
 }
