@@ -6,6 +6,8 @@ import { isSmallScreen, toggleMobileMode } from './mobileMode';
 import NavBar from './components/NavBar';
 import { tabs } from './tabs';
 import Stopwatch from './components/Stopwatch';
+import { v4 as generateId } from 'uuid';
+import LapsList from './components/LapsList';
 
 function App({useDarkMode}) {
 
@@ -14,6 +16,7 @@ function App({useDarkMode}) {
   const [activeTab, setActiveTab] = useState(tabs.stopwatch);
   const [stopwatchTime, setStopwatchTime] = useState(0);
   const [stopwatchPaused, setStopwatchPaused] = useState(true);
+  const [laps, setLaps] = useState([]);
 
   toggleMobileMode(setMobileMode);
 
@@ -25,6 +28,13 @@ function App({useDarkMode}) {
   function changeActiveTab(tabId)
   {
     setActiveTab(tabId);
+  }
+
+  function addLap(newLap)
+  {
+    const lapsCopy = [...laps];
+    setLaps([...lapsCopy, {id: generateId(), value: newLap}]);
+    console.log(laps)
   }
 
   useEffect(() => {
@@ -58,6 +68,14 @@ function App({useDarkMode}) {
             setStopwatchPaused(true);
             setStopwatchTime(0);
           }}
+          laps={laps}
+          addLap={addLap}
+        />
+      }
+      {
+        activeTab === tabs.stopwatch &&
+        <LapsList
+          laps={laps}
         />
       }
     </div>

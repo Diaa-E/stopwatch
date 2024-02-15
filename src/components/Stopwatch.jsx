@@ -2,8 +2,10 @@ import "../styles/Stopwatch.css";
 import Watch from "./Watch";
 import RegularButton from "./RegularButton";
 import { iconBarrel } from "../iconBarrel";
+import LapsList from "./LapsList";
+import { convertFromCS } from "../timeConverter";
 
-export default function Stopwatch({time, paused, togglePause, reset})
+export default function Stopwatch({time, paused, addLap, togglePause, reset})
 {
     return (
         <>
@@ -25,7 +27,7 @@ export default function Stopwatch({time, paused, togglePause, reset})
                         danger={false}
                         iconPath={iconBarrel.lap}
                         text={"Lap"}
-                        onClick={() => {}}
+                        onClick={() => addLap(convertFromCS(time).join(":"))}
                     />
                 }
                 {
