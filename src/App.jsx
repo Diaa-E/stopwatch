@@ -41,6 +41,24 @@ function App({useDarkMode}) {
     setLaps([{id: generateId(), value: newLap}, ...lapsCopy]);
   }
 
+  function notifyTimerExpiry()
+  {
+    if (!"notification" in window)
+    {
+      alert("This browser does not support notifications.");
+    }
+    else if (Notification.permission === "granted")
+    {
+      const notification = new Notification("Time is up!");
+    }
+  }
+
+  useEffect(() => {
+
+    Notification.requestPermission();
+
+  }, []);
+
   useEffect(() => {
 
     if (countdownPaused) return;
@@ -50,6 +68,7 @@ function App({useDarkMode}) {
       setTimerEditMode(true);
       setCountdownPaused(true);
       setCountdown(oldCountdown);
+      notifyTimerExpiry();
       return;
     }
 
