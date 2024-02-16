@@ -1,7 +1,7 @@
 import "../styles/TimerSetter.css";
 import { useState } from "react";
 import RegularButton from "./RegularButton";
-import { convertToDoubleDigit } from "../timeConverter";
+import { convertToDoubleDigit, convertToSeconds } from "../timeConverter";
 import { iconBarrel } from "../iconBarrel";
 
 export default function TimerSetter({formattedTime, onSubmit})
@@ -24,7 +24,7 @@ export default function TimerSetter({formattedTime, onSubmit})
     }
 
     return (
-        <form className="timer-setter-form" onSubmit={onSubmit} role="form" action="">
+        <form className="timer-setter-form" onSubmit={() => onSubmit(convertToSeconds([hrs, mins, secs].join(":")))} role="form" action="">
             <div className="timer-setter">
                 <input
                     className="timer-setter-field"

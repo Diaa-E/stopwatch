@@ -41,6 +41,28 @@ function App({useDarkMode}) {
 
   useEffect(() => {
 
+    if (countdownPaused) return;
+
+    if (countdown === 0)
+    {
+      setCountdownPaused(true);
+      return;
+    }
+
+    const secInterval = setInterval(() => {
+
+      setCountdown(countdown => countdown - 1);
+
+    }, 1000);
+
+    return () => {
+      clearInterval(secInterval);
+    }
+
+  }, [countdownPaused, countdown]);
+
+  useEffect(() => {
+
     if (stopwatchPaused) return;
 
     const csInterval = setInterval(() => {
@@ -80,6 +102,10 @@ function App({useDarkMode}) {
         <Timer
           time={countdown}
           paused={countdownPaused}
+          startTimer={(time) => {
+            setCountdownPaused(false);
+            setCountdown(time);
+          }}
         />
       }
     </div>
