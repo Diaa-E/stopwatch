@@ -29,6 +29,7 @@ export default function TimerSetter({formattedTime, onSubmit})
                     type="number"
                     value={hrs}
                     data-testid="hours"
+                    onClick={e => e.target.select()}
                 />
                 <input
                     className="timer-setter-field"
@@ -39,6 +40,7 @@ export default function TimerSetter({formattedTime, onSubmit})
                     type="number"
                     value={mins}
                     data-testid="minutes"
+                    onClick={e => e.target.select()}
                 />
                 <input
                     className="timer-setter-field"
@@ -49,6 +51,7 @@ export default function TimerSetter({formattedTime, onSubmit})
                     type="number"
                     value={secs}
                     data-testid="seconds"
+                    onClick={e => e.target.select()}
                 />
             </div>
                 <RegularButton
