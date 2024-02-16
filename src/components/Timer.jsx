@@ -13,7 +13,7 @@ export default function Timer({time, paused, startTimer, editMode})
             editMode &&
             <TimerSetter
                 formattedTime={convertFromSeconds(time)}
-                onSubmit={startTimer}
+                startTimer={startTimer}
             />
         }
         {
