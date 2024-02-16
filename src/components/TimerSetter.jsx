@@ -17,13 +17,19 @@ export default function TimerSetter({formattedTime, onSubmit})
         return convertToDoubleDigit(e.target.value);
     }
 
+    function removeExtraDigit(value)
+    {
+        if (value.length > 2) return value.substring(0, 2);
+        return value;
+    }
+
     return (
         <form className="timer-setter-form" onSubmit={onSubmit} role="form" action="">
             <div className="timer-setter">
                 <input
                     className="timer-setter-field"
                     id="hours"
-                    onChange={e => setHrs(e.target.value)}
+                    onChange={e => setHrs(removeExtraDigit(e.target.value))}
                     onBlur={e => setHrs(correctValue(e, 99))}
                     role="input"
                     type="number"
@@ -34,7 +40,7 @@ export default function TimerSetter({formattedTime, onSubmit})
                 <input
                     className="timer-setter-field"
                     id="minutes"
-                    onChange={e => setMins(e.target.value)}
+                    onChange={e => setMins(removeExtraDigit(e.target.value))}
                     onBlur={e => setMins(correctValue(e, 59))}
                     role="input"
                     type="number"
@@ -45,7 +51,7 @@ export default function TimerSetter({formattedTime, onSubmit})
                 <input
                     className="timer-setter-field"
                     id="seconds"
-                    onChange={e => setSecs(e.target.value)}
+                    onChange={e => setSecs(removeExtraDigit(e.target.value))}
                     onBlur={e => setSecs(correctValue(e, 59))}
                     role="input"
                     type="number"
