@@ -17,6 +17,7 @@ function App({useDarkMode}) {
   const [activeTab, setActiveTab] = useState(tabs.stopwatch);
   const [stopwatchTime, setStopwatchTime] = useState(0);
   const [countdown, setCountdown] = useState(15 * 60);
+  const [oldCountdown, setOldCountdown] = useState(countdown);
   const [stopwatchPaused, setStopwatchPaused] = useState(true);
   const [countdownPaused, setCountdownPaused] = useState(true);
   const [timerEditMode, setTimerEditMode] = useState(true);
@@ -48,6 +49,7 @@ function App({useDarkMode}) {
     {
       setTimerEditMode(true);
       setCountdownPaused(true);
+      setCountdown(oldCountdown);
       return;
     }
 
@@ -108,6 +110,7 @@ function App({useDarkMode}) {
           startTimer={(time) => {
             setTimerEditMode(false);
             setCountdownPaused(false);
+            setOldCountdown(time);
             setCountdown(time);
           }}
         />
