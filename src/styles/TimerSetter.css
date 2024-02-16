@@ -22,6 +22,7 @@
     border-radius: 10px;
     width: 80px;
     cursor: text;
+    text-align: center;
 }
 
 /*Remove input arrows*/
