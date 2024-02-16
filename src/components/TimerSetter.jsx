@@ -24,7 +24,7 @@ export default function TimerSetter({formattedTime, startTimer})
     }
 
     return (
-            <div className="timer-setter-form">
+            <div data-testid="timer-setter-form" className="timer-setter-form">
                 <div className="timer-setter">
                     <input
                         className="timer-setter-field"

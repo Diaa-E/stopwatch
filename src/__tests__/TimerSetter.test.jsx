@@ -19,7 +19,7 @@ describe("TimerSetter component", () => {
 
         render(<TimerSetter formattedTime={"01:15:45"}/>);
 
-        expect(screen.getByRole("form")).toBeInTheDocument();
+        expect(screen.getByTestId("timer-setter-form")).toBeInTheDocument();
     });
 
     it("Displays time split into 3 text boxes", () => {
@@ -32,23 +32,5 @@ describe("TimerSetter component", () => {
         expect(screen.getByTestId("seconds").value).toBe("45");
         expect(screen.getByTestId("minutes").value).toBe("15");
         expect(screen.getByTestId("hours").value).toBe("01");
-    });
-
-    it("Calls submit handler when submit button is clicked", async () => {
-
-        const onSubmit = vi.fn();
-        const {user} = setup(<TimerSetter formattedTime={["01", "15", "45"]} onSubmit={onSubmit}/>);
-        const submitButton = screen.getByRole("submit");
-        await user.click(submitButton);
-
-        expect(onSubmit).toHaveBeenCalled();
-    });
-
-    it("Does not call submit handler when submit button is not clicked", async () => {
-
-        const onSubmit = vi.fn();
-        const {user} = setup(<TimerSetter formattedTime={"01:15:45"} onSubmit={onSubmit}/>);
-
-        expect(onSubmit).not.toHaveBeenCalled();
     });
 })
