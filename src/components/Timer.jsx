@@ -7,12 +7,11 @@ import { convertFromSeconds } from "../timeConverter";
 
 export default function Timer({time, paused})
 {
-    const [editMode, setEditMode] = useState(true);
 
     return (
         <div className="timer">
         {
-            editMode &&
+            paused &&
             <TimerSetter
                 formattedTime={convertFromSeconds(time)}
                 onSubmit={() => {}}

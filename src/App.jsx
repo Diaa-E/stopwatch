@@ -18,6 +18,7 @@ function App({useDarkMode}) {
   const [stopwatchTime, setStopwatchTime] = useState(0);
   const [countdown, setCountdown] = useState(15 * 60);
   const [stopwatchPaused, setStopwatchPaused] = useState(true);
+  const [countdownPaused, setCountdownPaused] = useState(true);
   const [laps, setLaps] = useState([]);
 
   toggleMobileMode(setMobileMode);
@@ -78,6 +79,7 @@ function App({useDarkMode}) {
         activeTab === tabs.timer &&
         <Timer
           time={countdown}
+          paused={countdownPaused}
         />
       }
     </div>
