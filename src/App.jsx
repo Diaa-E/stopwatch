@@ -19,6 +19,7 @@ function App({useDarkMode}) {
   const [countdown, setCountdown] = useState(15 * 60);
   const [stopwatchPaused, setStopwatchPaused] = useState(true);
   const [countdownPaused, setCountdownPaused] = useState(true);
+  const [timerEditMode, setTimerEditMode] = useState(true);
   const [laps, setLaps] = useState([]);
 
   toggleMobileMode(setMobileMode);
@@ -45,6 +46,7 @@ function App({useDarkMode}) {
 
     if (countdown === 0)
     {
+      setTimerEditMode(true);
       setCountdownPaused(true);
       return;
     }
@@ -102,7 +104,9 @@ function App({useDarkMode}) {
         <Timer
           time={countdown}
           paused={countdownPaused}
+          editMode={timerEditMode}
           startTimer={(time) => {
+            setTimerEditMode(false);
             setCountdownPaused(false);
             setCountdown(time);
           }}

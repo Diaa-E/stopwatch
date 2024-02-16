@@ -5,19 +5,19 @@ import Hourglass from "./Hourglass";
 import { useState } from "react";
 import { convertFromSeconds } from "../timeConverter";
 
-export default function Timer({time, paused, startTimer})
+export default function Timer({time, paused, startTimer, editMode})
 {
     return (
         <div className="timer">
         {
-            paused &&
+            editMode &&
             <TimerSetter
                 formattedTime={convertFromSeconds(time)}
                 onSubmit={startTimer}
             />
         }
         {
-            !paused &&
+            !editMode &&
             <Hourglass
                 time={time}
             />
