@@ -25,6 +25,11 @@
     text-align: center;
 }
 
+.timer-setter-field::selection{
+    color: var(--bg);
+    background-color: var(--accent);
+}
+
 /*Remove input arrows*/
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
