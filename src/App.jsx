@@ -15,7 +15,7 @@ function App({useDarkMode, requestNotification = () => Notification.requestPermi
   const [darkMode, setDarkMode] = useState(useDarkMode);
   const [activeTab, setActiveTab] = useState(tabs.stopwatch);
   const [stopwatchTime, setStopwatchTime] = useState(0);
-  const [countdown, setCountdown] = useState(15 * 60);
+  const [countdown, setCountdown] = useState(15 * 60 * 100);
   const [oldCountdown, setOldCountdown] = useState(countdown);
   const [stopwatchPaused, setStopwatchPaused] = useState(true);
   const [countdownPaused, setCountdownPaused] = useState(true);
@@ -79,7 +79,7 @@ function App({useDarkMode, requestNotification = () => Notification.requestPermi
 
       setCountdown(countdown => countdown - 1);
 
-    }, 1000);
+    }, 10);
 
     return () => {
       clearInterval(secInterval);

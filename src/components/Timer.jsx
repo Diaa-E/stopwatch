@@ -2,7 +2,7 @@ import "../styles/Timer.css";
 import { iconBarrel } from "../iconBarrel";
 import TimerSetter from "./TimerSetter";
 import Hourglass from "./Hourglass";
-import { convertFromSeconds } from "../timeConverter";
+import { convertFromCS } from "../timeConverter";
 import RegularButton from "./RegularButton";
 
 export default function Timer({time, timeTarget, paused, startTimer, editMode, togglePause, cancelTimer})
@@ -12,7 +12,7 @@ export default function Timer({time, timeTarget, paused, startTimer, editMode, t
         {
             editMode &&
             <TimerSetter
-                formattedTime={convertFromSeconds(time)}
+                formattedTime={convertFromCS(time, true)}
                 startTimer={startTimer}
             />
         }

@@ -1,7 +1,7 @@
 import "../styles/TimerSetter.css";
 import { useState } from "react";
 import RegularButton from "./RegularButton";
-import { convertToDoubleDigit, convertToSeconds } from "../timeConverter";
+import { convertToCS, convertToDoubleDigit } from "../timeConverter";
 import { iconBarrel } from "../iconBarrel";
 
 export default function TimerSetter({formattedTime, startTimer})
@@ -57,7 +57,7 @@ export default function TimerSetter({formattedTime, startTimer})
                         text={"Start"}
                         iconPath={iconBarrel.start}
                         danger={false}
-                        onClick={() => startTimer(convertToSeconds([hrs, mins, secs].join(":")))}
+                        onClick={() => startTimer(convertToCS([hrs, mins, secs].join(":")))}
                         type="button"
                     />
             </div>

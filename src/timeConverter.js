@@ -1,4 +1,4 @@
-export function convertFromCS(totalCentiseconds)
+export function convertFromCS(totalCentiseconds, round = false)
 {
     const centiseconds = totalCentiseconds % 100;
     const seconds = Math.floor(totalCentiseconds / 100) % 60;
@@ -8,7 +8,7 @@ export function convertFromCS(totalCentiseconds)
     return [
         convertToDoubleDigit(hours),
         convertToDoubleDigit(minutes),
-        `${convertToDoubleDigit(seconds)}.${convertToDoubleDigit(centiseconds)}`
+        `${convertToDoubleDigit(seconds)}${round ? "" : "." + convertToDoubleDigit(centiseconds)}`
     ]
 }
 

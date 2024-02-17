@@ -1,5 +1,5 @@
 import "../styles/Hourglass.css";
-import { convertFromSeconds } from "../timeConverter";
+import { convertFromCS } from "../timeConverter";
 import { getHourglassHeight } from "../watchPositioner";
 
 export default function Hourglass({time, timeTarget})
@@ -12,7 +12,7 @@ export default function Hourglass({time, timeTarget})
 
                 </div>
             </div>
-            <p data-testid="time" className="hg-time" >{convertFromSeconds(time).join(":")}</p>
+            <p data-testid="time" className="hg-time" >{convertFromCS(time, true).join(":")}</p>
             <div data-testid="hourglassBottom" className="hg-common hg-bottom">
                 <div style={{transform: `scaleY(${sandHeight.bottom}%)`}} data-testid="sandBottom" className="hg-inner">
 
