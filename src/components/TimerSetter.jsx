@@ -10,13 +10,6 @@ export default function TimerSetter({formattedTime, startTimer})
     const [mins, setMins] = useState(formattedTime[1]);
     const [secs, setSecs] = useState(formattedTime[2]);
 
-    function correctValue(e, upperLimit)
-    {
-        if (+e.target.value > upperLimit) return upperLimit;
-        if (+e.target.value < 0 || e.target.value === "" || +e.target.value === 0) return "00";
-        return convertToDoubleDigit(+e.target.value);
-    }
-
     function removeExtraDigit(value)
     {
         if (value.length > 2) return value.substring(0, 2);
@@ -30,7 +23,7 @@ export default function TimerSetter({formattedTime, startTimer})
                         className="timer-setter-field"
                         id="hours"
                         onChange={e => setHrs(removeExtraDigit(e.target.value))}
-                        onBlur={e => setHrs(correctValue(e, 99))}
+                        onBlur={e => setHrs(convertToDoubleDigit(e.target.value, 99))}
                         role="input"
                         type="number"
                         value={hrs}
@@ -41,7 +34,7 @@ export default function TimerSetter({formattedTime, startTimer})
                         className="timer-setter-field"
                         id="minutes"
                         onChange={e => setMins(removeExtraDigit(e.target.value))}
-                        onBlur={e => setMins(correctValue(e, 59))}
+                        onBlur={e => setMins(convertToDoubleDigit(e.target.value, 59))}
                         role="input"
                         type="number"
                         value={mins}
@@ -52,7 +45,7 @@ export default function TimerSetter({formattedTime, startTimer})
                         className="timer-setter-field"
                         id="seconds"
                         onChange={e => setSecs(removeExtraDigit(e.target.value))}
-                        onBlur={e => setSecs(correctValue(e, 59))}
+                        onBlur={e => setSecs(convertToDoubleDigit(e.target.value, 59))}
                         role="input"
                         type="number"
                         value={secs}

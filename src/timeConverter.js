@@ -39,7 +39,9 @@ export function convertToCS(formattedTime)
     return ((+timeArray[0] * 60 * 60) + (+timeArray[1] * 60) + (+timeArray[2])) * 100;
 }
 
-export function convertToDoubleDigit(number)
+export function convertToDoubleDigit(value, upperLimit)
 {
-    return `${number < 10 ? "0" + number : number}`;
+    if (+value > upperLimit) return upperLimit;
+    if (+value <= 0 || value === "") return "00";
+    return `${+value < 10 ? "0" + +value : value}`;
 }
