@@ -25,7 +25,8 @@
 .hg-inner{
     background-color: var(--accent);
     margin: auto 0 0 0 ;
-    transition-duration: var(--color-transition);
+    transition-duration: 1s;
+    transition-timing-function: linear;
 }
 
 .hg-time{
