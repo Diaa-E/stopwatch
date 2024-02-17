@@ -122,6 +122,7 @@ function App({useDarkMode, requestNotification = () => Notification.requestPermi
           }}
           laps={laps}
           addLap={addLap}
+          mobileMode={mobileMode}
         />
       }
       {
@@ -131,6 +132,7 @@ function App({useDarkMode, requestNotification = () => Notification.requestPermi
           timeTarget={oldCountdown}
           paused={countdownPaused}
           editMode={timerEditMode}
+          mobileMode={mobileMode}
           startTimer={(time) => {
             setTimerEditMode(false);
             setCountdownPaused(false);

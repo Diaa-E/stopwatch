@@ -5,7 +5,7 @@ import { iconBarrel } from "../iconBarrel";
 import LapsList from "./LapsList";
 import { convertFromCS } from "../timeConverter";
 
-export default function Stopwatch({time, paused, laps, addLap, togglePause, reset})
+export default function Stopwatch({time, paused, laps, addLap, togglePause, reset, mobileMode})
 {
     return (
         <div className="stopwatch">
@@ -20,6 +20,7 @@ export default function Stopwatch({time, paused, laps, addLap, togglePause, rese
                     iconPath={paused ? iconBarrel.start : iconBarrel.pause}
                     text={paused ? time > 0 ? "Resume" : "Start" : "Pause"}
                     onClick={togglePause}
+                    mobileMode={mobileMode}
                 />
                 {
                     time > 0 &&
@@ -28,6 +29,7 @@ export default function Stopwatch({time, paused, laps, addLap, togglePause, rese
                         iconPath={iconBarrel.lap}
                         text={"Lap"}
                         onClick={() => addLap(convertFromCS(time).join(":"))}
+                        mobileMode={mobileMode}
                     />
                 }
                 {
@@ -37,6 +39,7 @@ export default function Stopwatch({time, paused, laps, addLap, togglePause, rese
                         iconPath={iconBarrel.reset}
                         text={"Reset"}
                         onClick={reset}
+                        mobileMode={mobileMode}
                     />
                 }
             </div>

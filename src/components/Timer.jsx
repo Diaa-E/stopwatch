@@ -5,7 +5,7 @@ import Hourglass from "./Hourglass";
 import { convertFromCS } from "../timeConverter";
 import RegularButton from "./RegularButton";
 
-export default function Timer({time, timeTarget, paused, startTimer, editMode, togglePause, cancelTimer})
+export default function Timer({time, timeTarget, paused, startTimer, editMode, togglePause, cancelTimer, mobileMode})
 {
     return (
         <div className="timer">
@@ -14,6 +14,7 @@ export default function Timer({time, timeTarget, paused, startTimer, editMode, t
             <TimerSetter
                 formattedTime={convertFromCS(time, true)}
                 startTimer={startTimer}
+                mobileMode={mobileMode}
             />
         }
         {
@@ -30,6 +31,7 @@ export default function Timer({time, timeTarget, paused, startTimer, editMode, t
                         text={paused ? "Resume" : "Pause"}
                         onClick={togglePause}
                         type="button"
+                        mobileMode={mobileMode}
                     />
                     <RegularButton
                         danger={true}
@@ -37,6 +39,7 @@ export default function Timer({time, timeTarget, paused, startTimer, editMode, t
                         text={"Cancel"}
                         onClick={cancelTimer}
                         type="button"
+                        mobileMode={mobileMode}
                     />
                 </div>
             </>

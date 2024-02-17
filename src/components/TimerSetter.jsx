@@ -4,7 +4,7 @@ import RegularButton from "./RegularButton";
 import { convertToCS, convertToDoubleDigit } from "../timeConverter";
 import { iconBarrel } from "../iconBarrel";
 
-export default function TimerSetter({formattedTime, startTimer})
+export default function TimerSetter({formattedTime, startTimer, mobileMode})
 {
     const [hrs, setHrs] = useState(formattedTime[0]);
     const [mins, setMins] = useState(formattedTime[1]);
@@ -59,6 +59,7 @@ export default function TimerSetter({formattedTime, startTimer})
                         danger={false}
                         onClick={() => startTimer(convertToCS([hrs, mins, secs].join(":")))}
                         type="button"
+                        mobileMode={mobileMode}
                     />
             </div>
     )

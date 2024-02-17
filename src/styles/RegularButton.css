@@ -3,9 +3,9 @@
     background-color: var(--bg);
     color: var(--accent);
     border: solid var(--accent) 3px;
-    border-radius: 10px;
-    padding: 5px;
-    width: 150px;
+    border-radius: 50%;
+    padding: 20px;
+    width: auto;
     gap: 10px;
     place-content: center;
     place-items: center;
@@ -21,7 +21,7 @@
 .button>img{
     will-change: filter;
     filter: var(--icon-accent);
-    height: 20px;
+    height: 30px;
     cursor: pointer;
 }
 
@@ -40,4 +40,17 @@
 
 .button-danger>img{
     filter: var(--icon-danger);
+}
+
+@media (min-width: 700px) and (orientation: landscape)
+{
+    .button{
+        padding: 5px;
+        width: 150px;
+        border-radius: 10px;
+    }
+
+    .button>img{
+        height: 20px;
+    }
 }
