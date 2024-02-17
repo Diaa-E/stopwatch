@@ -214,6 +214,11 @@ describe("To seconds", () => {
 
 describe("From centiseconds", () => {
 
+    it ("Removes fraction when passed true for round argument", () => {
+
+        expect(convertFromCS((60 * 60 * 100) + (35 * 100), true)).toEqual(["01", "00", "35"]);
+    });
+
     it("converts centiseconds < 1 min: lower bound -> 00:00:00.00", () => {
 
         expect(convertFromCS(0)).toEqual(["00", "00", "00.00"]);
