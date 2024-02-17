@@ -23,7 +23,7 @@ describe("Hourglass component", () => {
 
     it("Shows time from props", () => {
 
-        render(<Hourglass time={60 * 60 + 35}/>);
+        render(<Hourglass time={(60 * 60 * 100) + (35 * 100)}/>);
 
         expect(screen.getByTestId("time").textContent).toBe("01:00:35");
     });
