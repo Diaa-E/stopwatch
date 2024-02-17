@@ -43,9 +43,10 @@ function App({useDarkMode, requestNotification = () => Notification.requestPermi
 
   function notifyTimerExpiry()
   {
-    if (!"notification" in window)
+    if (!window.Notification)
     {
-      alert("This browser does not support notifications.");
+      alert("Time is up!");
+      console.alert("This browser does not support notifications.")
     }
     else if (Notification.permission === "granted")
     {
