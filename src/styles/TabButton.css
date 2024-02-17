@@ -4,7 +4,7 @@
     color: var(--accent);
     border: solid var(--accent) 3px;
     border-radius: 10px;
-    padding: 5px;
+    padding: 10px;
     gap: 10px;
     place-content: center;
     place-items: center;
@@ -20,7 +20,7 @@
 .tab-button>img{
     will-change: filter;
     filter: var(--icon-accent);
-    height: 30px;
+    height: 40px;
     cursor: pointer;
 }
 
@@ -35,4 +35,15 @@
 
 .active>img{
     filter: var(--icon-bg);
+}
+
+@media (min-width: 700px) and (orientation: landscape) {
+    
+    .tab-button{
+        padding: 5px;
+    }
+
+    .tab-button>img{
+        height: 30px;
+    }
 }
