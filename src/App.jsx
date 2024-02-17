@@ -61,16 +61,19 @@ function App({useDarkMode}) {
 
   useEffect(() => {
 
-    if (countdownPaused) return;
-
     if (countdown === 0)
     {
       setTimerEditMode(true);
       setCountdownPaused(true);
       setCountdown(oldCountdown);
       notifyTimerExpiry();
-      return;
     }
+
+  }, [countdown]);
+
+  useEffect(() => {
+
+    if (countdownPaused) return;
 
     const secInterval = setInterval(() => {
 
@@ -82,7 +85,7 @@ function App({useDarkMode}) {
       clearInterval(secInterval);
     }
 
-  }, [countdownPaused, countdown]);
+  }, [countdownPaused]);
 
   useEffect(() => {
 
