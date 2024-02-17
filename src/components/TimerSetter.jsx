@@ -14,7 +14,7 @@ export default function TimerSetter({formattedTime, startTimer})
     {
         if (+e.target.value > upperLimit) return upperLimit;
         if (+e.target.value < 0 || e.target.value === "" || +e.target.value === 0) return "00";
-        return convertToDoubleDigit(e.target.value);
+        return convertToDoubleDigit(+e.target.value);
     }
 
     function removeExtraDigit(value)
