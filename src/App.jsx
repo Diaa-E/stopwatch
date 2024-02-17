@@ -107,6 +107,7 @@ function App({useDarkMode, requestNotification = () => Notification.requestPermi
         darkMode={darkMode}
         toggleDarkMode={toggleDarkMode}
         changeActiveTab={changeActiveTab}
+        mobileMode={mobileMode}
       />
       {
         activeTab === tabs.stopwatch && 

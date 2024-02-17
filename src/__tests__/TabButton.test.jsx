@@ -43,6 +43,15 @@ describe("TabButton component", () => {
         expect(screen.getByRole("tab")).toHaveClass("active");
     });
 
+    it("Uses icon only when mobile mode is true", () => {
+
+        render(<TabButton text={"click here"} mobileMode={true}/>);
+
+        expect(screen.getByRole("tab").textContent).toBe("");
+        expect(screen.getByRole("tab").childNodes[0]).toBeInstanceOf(Image);
+        expect(screen.getByRole("tab").childNodes.length).toBe(1);
+    });
+
     it("Does not call callback when it is not clicked", () => {
 
         const onClick = vi.fn();
