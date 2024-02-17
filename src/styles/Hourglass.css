@@ -9,8 +9,8 @@
     display: grid;
     place-items: stretch;
     border: solid var(--accent) 3px;
-    min-height: 200px;
-    min-width: 200px;
+    min-height: 150px;
+    min-width: 150px;
     overflow: clip;
 }
 
@@ -36,5 +36,17 @@
 .hg-time{
     color: var(--accent);
     font-family: minim;
-    font-size: 32px;
+    font-size: 56px;
+}
+
+@media (min-width: 700px) and (orientation: landscape)
+{
+    .hg-common{
+        min-height: 200px;
+        min-width: 200px;
+    }
+
+    .hg-time{
+        font-size: 32px;
+    }
 }
