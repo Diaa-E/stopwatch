@@ -46,7 +46,7 @@ function App({useDarkMode, requestNotification = () => Notification.requestPermi
     if (!window.Notification)
     {
       alert("Time is up!");
-      console.alert("This browser does not support notifications.")
+      console.alert("This browser does not support notifications.");
     }
     else if (Notification.permission === "granted")
     {
@@ -135,6 +135,12 @@ function App({useDarkMode, requestNotification = () => Notification.requestPermi
             setCountdownPaused(false);
             setOldCountdown(time);
             setCountdown(time);
+          }}
+          togglePause={() => setCountdownPaused(countdownPaused => !countdownPaused)}
+          cancelTimer={() => {
+            setCountdownPaused(true);
+            setCountdown(oldCountdown);
+            setTimerEditMode(true);
           }}
         />
       }

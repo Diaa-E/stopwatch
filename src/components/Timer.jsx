@@ -4,8 +4,9 @@ import TimerSetter from "./TimerSetter";
 import Hourglass from "./Hourglass";
 import { useState } from "react";
 import { convertFromSeconds } from "../timeConverter";
+import RegularButton from "./RegularButton";
 
-export default function Timer({time, paused, startTimer, editMode})
+export default function Timer({time, paused, startTimer, editMode, togglePause, cancelTimer})
 {
     return (
         <div className="timer">
@@ -18,9 +19,27 @@ export default function Timer({time, paused, startTimer, editMode})
         }
         {
             !editMode &&
-            <Hourglass
-                time={time}
-            />
+            <>
+                <Hourglass
+                    time={time}
+                />
+                <div className="timer-controls">
+                    <RegularButton
+                        danger={false}
+                        iconPath={paused? iconBarrel.start : iconBarrel.pause}
+                        text={paused ? "Resume" : "Pause"}
+                        onClick={togglePause}
+                        type="button"
+                    />
+                    <RegularButton
+                        danger={true}
+                        iconPath={iconBarrel.cancel}
+                        text={"Cancel"}
+                        onClick={cancelTimer}
+                        type="button"
+                    />
+                </div>
+            </>
         }
         </div>
     )
