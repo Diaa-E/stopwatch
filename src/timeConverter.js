@@ -39,9 +39,9 @@ export function convertToCS(formattedTime)
     return ((+timeArray[0] * 60 * 60) + (+timeArray[1] * 60) + (+timeArray[2])) * 100;
 }
 
-export function convertToDoubleDigit(value, upperLimit)
+export function convertToDoubleDigit(value, upperLimit = 99)
 {
-    if (+value > upperLimit) return upperLimit;
+    if (+value > upperLimit) return upperLimit.toString();
     if (+value <= 0 || value === "") return "00";
-    return `${+value < 10 ? "0" + +value : value}`;
+    return `${+value < 10 ? ("0" + +value).toString() : value.toString()}`;
 }

@@ -13,9 +13,38 @@ describe("Convert to double digit", () => {
         expect(convertToDoubleDigit(10)).toBe("10");
     });
 
-    it("returns results as string", () => {
+    it("returns 00 for negative values", () => {
 
-        expect(convertToDoubleDigit(15)).toBeTypeOf("string");
+        expect(convertToDoubleDigit(-1)).toBe("00");
+    });
+
+    it("returns results as string for all conditions cases", () => {
+
+        expect(convertToDoubleDigit(100)).toBeTypeOf("string"); // value > limit
+        expect(convertToDoubleDigit(15)).toBeTypeOf("string"); // double digit value
+        expect(convertToDoubleDigit(5)).toBeTypeOf("string"); // single digit value
+        expect(convertToDoubleDigit("")).toBeTypeOf("string"); // empty string value
+        expect(convertToDoubleDigit(-1)).toBeTypeOf("string"); //negative value
+    });
+
+    it("returns upper limit for values bigger than the upper limit", () => {
+
+        expect(convertToDoubleDigit(80, 59)).toBe("59");
+    });
+
+    it("Handles string arguments", () => {
+
+        expect(convertToDoubleDigit("3")).toBe("03");
+    });
+
+    it("Converts empty strings to 00", () => {
+
+        expect(convertToDoubleDigit("")).toBe("00");
+    });
+
+    it("Does not add zeros to already double digit formatted values", () => {
+        
+        expect(convertToDoubleDigit("02")).toBe("02");
     });
 });
 
