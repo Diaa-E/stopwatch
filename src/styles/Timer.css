@@ -2,3 +2,10 @@
     display: grid;
     grid-auto-rows: min-content;
 }
+
+.timer-controls{
+    display: flex;
+    place-content: center;
+    place-items: center;
+    gap: 20px;
+}
