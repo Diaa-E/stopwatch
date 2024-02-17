@@ -23,9 +23,13 @@
 }
 
 .hg-inner{
+    will-change: transform;
     background-color: var(--accent);
     margin: auto 0 0 0 ;
     transition-duration: 1s;
+    height: 100%;
+    width: 100%;
+    transform-origin: bottom center;
     transition-timing-function: linear;
 }
 
