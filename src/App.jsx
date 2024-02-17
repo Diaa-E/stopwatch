@@ -10,7 +10,7 @@ import { v4 as generateId } from 'uuid';
 import LapsList from './components/LapsList';
 import Timer from './components/Timer';
 
-function App({useDarkMode}) {
+function App({useDarkMode, requestNotification = () => Notification.requestPermission()}) {
 
   const [mobileMode, setMobileMode] = useState(isSmallScreen());
   const [darkMode, setDarkMode] = useState(useDarkMode);
@@ -55,7 +55,7 @@ function App({useDarkMode}) {
 
   useEffect(() => {
 
-    Notification.requestPermission();
+   requestNotification();
 
   }, []);
 

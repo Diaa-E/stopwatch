@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
+import { vi } from "vitest";
 import App from "../App";
 
 describe("Test library works correctly", () => {
@@ -17,21 +18,21 @@ describe("App component", () => {
 
     it("Renders correclty", () => {
 
-        render(<App />);
+        render(<App requestNotification={() => {}} />);
 
         expect(screen.getByRole("main")).toBeInTheDocument();
     });
 
     it("Uses common class + dark class when passed true for dark mode", () => {
 
-        render(<App useDarkMode={true}/>);
+        render(<App requestNotification={() => {}} useDarkMode={true}/>);
 
         expect(screen.getByRole("main")).toHaveClass("common", "dark");
     });
 
     it("Uses common class + light class when passed false for dark mode", () => {
 
-        render(<App useDarkMode={false}/>);
+        render(<App requestNotification={() => {}} useDarkMode={false}/>);
 
         expect(screen.getByRole("main")).toHaveClass("common", "light");
     });
