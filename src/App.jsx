@@ -128,6 +128,7 @@ function App({useDarkMode, requestNotification = () => Notification.requestPermi
         activeTab === tabs.timer &&
         <Timer
           time={countdown}
+          timeTarget={oldCountdown}
           paused={countdownPaused}
           editMode={timerEditMode}
           startTimer={(time) => {

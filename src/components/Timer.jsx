@@ -6,7 +6,7 @@ import { useState } from "react";
 import { convertFromSeconds } from "../timeConverter";
 import RegularButton from "./RegularButton";
 
-export default function Timer({time, paused, startTimer, editMode, togglePause, cancelTimer})
+export default function Timer({time, timeTarget, paused, startTimer, editMode, togglePause, cancelTimer})
 {
     return (
         <div className="timer">
@@ -22,6 +22,7 @@ export default function Timer({time, paused, startTimer, editMode, togglePause, 
             <>
                 <Hourglass
                     time={time}
+                    timeTarget={timeTarget}
                 />
                 <div className="timer-controls">
                     <RegularButton

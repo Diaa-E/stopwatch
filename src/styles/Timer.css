@@ -1,6 +1,7 @@
 .timer{
     display: grid;
     grid-auto-rows: min-content;
+    gap: 30px;
 }
 
 .timer-controls{

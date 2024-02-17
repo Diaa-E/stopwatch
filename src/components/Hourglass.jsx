@@ -1,17 +1,20 @@
-import { convertFromSeconds } from "../timeConverter"
+import "../styles/Hourglass.css";
+import { convertFromSeconds } from "../timeConverter";
+import { getHourglassHeight } from "../watchPositioner";
 
 export default function Hourglass({time, timeTarget})
 {
+    const sandHeight = getHourglassHeight(time, timeTarget);
     return (
-        <div role="timer">
-            <div data-testid="hourglassTop" className="hg-top">
-                <div data-testid="sandTop" className="hg-inner">
+        <div role="timer" className="hg-container">
+            <div data-testid="hourglassTop" className="hg-common hg-top">
+                <div style={{height: `${sandHeight.top}%`}} data-testid="sandTop" className="hg-inner">
 
                 </div>
             </div>
-            <p data-testid="time" >{convertFromSeconds(time).join(":")}</p>
-            <div data-testid="hourglassBottom" className="hg-bottom">
-                <div data-testid="sandBottom" className="hg-inner">
+            <p data-testid="time" className="hg-time" >{convertFromSeconds(time).join(":")}</p>
+            <div data-testid="hourglassBottom" className="hg-common hg-bottom">
+                <div style={{height: `${sandHeight.bottom}%`}} data-testid="sandBottom" className="hg-inner">
 
                 </div>
             </div>
