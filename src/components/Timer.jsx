@@ -2,7 +2,6 @@ import "../styles/Timer.css";
 import { iconBarrel } from "../iconBarrel";
 import TimerSetter from "./TimerSetter";
 import Hourglass from "./Hourglass";
-import { useState } from "react";
 import { convertFromSeconds } from "../timeConverter";
 import RegularButton from "./RegularButton";
 

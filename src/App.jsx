@@ -7,7 +7,6 @@ import NavBar from './components/NavBar';
 import { tabs } from './tabs';
 import Stopwatch from './components/Stopwatch';
 import { v4 as generateId } from 'uuid';
-import LapsList from './components/LapsList';
 import Timer from './components/Timer';
 
 function App({useDarkMode, requestNotification = () => Notification.requestPermission()}) {
