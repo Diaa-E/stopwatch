@@ -1,16 +1,17 @@
 .stopwatch{
     display: grid;
     grid-auto-rows: min-content;
-    gap: 30px;
+    gap: 80px;
 }
 
 .watch{
     display: grid;
     place-items: center;
     place-content: center;
-    height: calc(170px * 2.5);
-    width: calc(170px * 2.5);
+    min-height: 80vw;
+    min-width: 80vw;
     place-self: center;
+    margin: 80px 0 0 0;
 }
 
 .stopwatch-controls{
@@ -18,4 +19,17 @@
     place-content: center;
     place-items: center;
     gap: 20px;
+}
+
+@media (min-width: 700px) and (orientation: landscape) {
+    
+    .watch{
+        min-height: calc(170px * 2.5);
+        min-width: calc(170px * 2.5);
+        margin: 100px 0 0 0;
+    }
+
+    .stopwatch{
+        gap: 80px;
+    }
 }

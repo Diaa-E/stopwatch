@@ -12,6 +12,7 @@ export default function Stopwatch({time, paused, laps, addLap, togglePause, rese
             <div className="watch">
                 <Watch
                     time={time}
+                    mobileMode={mobileMode}
                     />
             </div>
             <div className="stopwatch-controls">

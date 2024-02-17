@@ -8,8 +8,8 @@
     grid-auto-flow: column;
     place-self: center;
     place-content: stretch;
-    font-size: 24px;
-    min-width: 500px;
+    font-size: 5vw;
+    min-width: 80vw;
     color: var(--accent);
 }
 
@@ -22,4 +22,11 @@
 .lap{
     font-family: minim;
     place-self: flex-end;
+}
+
+@media (min-width: 700px) and (orientation: landscape) {
+    .lap-row{
+        font-size: 24px;
+        min-width: 500px;
+    }
 }

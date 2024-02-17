@@ -1,7 +1,7 @@
 .watch-time{
     font-family: minim;
     color: var(--accent);
-    font-size: 32px;
+    font-size: 8.5vw;
     grid-row: 1;
     grid-column: 1;
 }
@@ -32,4 +32,11 @@
     margin: -10px auto 0 auto;
     background-color: var(--accent);
     transform: rotateZ(.5turn);
+}
+
+@media (min-width: 700px) and (orientation: landscape)
+{
+    .watch-time{
+        font-size: 32px;
+    }
 }
