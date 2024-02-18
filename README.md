@@ -1,8 +1,10 @@
-# React + Vite
+# <img src="./public/logo.svg" height="30px"> Stopwatch
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple Stopwatch app, includes a countdown timer and regular stopwatch.
 
-Currently, two official plugins are available:
+[Live preview (gh-pages)](https://diaa-e.github.io/stopwatch/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## To do
+
+1. Fix timers lagging when tab loses focus
+2. Add a looping sound effect when timer expires.
