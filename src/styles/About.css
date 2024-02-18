@@ -1,0 +1,37 @@
+.about{
+    display: grid;
+    place-items: center;
+    gap: 30px;
+    margin: 100px 0 0 0;
+    text-align: center;
+}
+
+.app-title{
+    font-size: 32px;
+    color: var(--accent);
+}
+
+.info{
+    font-size: 24px;
+    color: var(--accent);
+}
+
+.info>a:visited{
+    color: var(--visited);
+}
+
+.info>a{
+    color: var(--link);
+    cursor: pointer;
+}
+
+@media (min-width: 700px) {
+    
+    .app-title{
+        font-size: 56px;
+    }
+
+    .info{
+        font-size: 24px;
+    }
+}

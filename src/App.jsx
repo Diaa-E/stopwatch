@@ -8,6 +8,7 @@ import { tabs } from './tabs';
 import Stopwatch from './components/Stopwatch';
 import { v4 as generateId } from 'uuid';
 import Timer from './components/Timer';
+import About from './components/About';
 
 function App({useDarkMode, requestNotification = () => Notification.requestPermission()}) {
 
@@ -21,6 +22,8 @@ function App({useDarkMode, requestNotification = () => Notification.requestPermi
   const [countdownPaused, setCountdownPaused] = useState(true);
   const [timerEditMode, setTimerEditMode] = useState(true);
   const [laps, setLaps] = useState([]);
+
+  const version = "1.0.0";
 
   toggleMobileMode(setMobileMode);
 
@@ -145,6 +148,12 @@ function App({useDarkMode, requestNotification = () => Notification.requestPermi
             setCountdown(oldCountdown);
             setTimerEditMode(true);
           }}
+        />
+      }
+      {
+        activeTab == tabs.about &&
+        <About
+          version={version}
         />
       }
     </div>
