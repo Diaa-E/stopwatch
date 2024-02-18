@@ -37,7 +37,7 @@
     filter: var(--icon-bg);
 }
 
-@media (min-width: 700px) and (orientation: landscape) {
+@media (min-width: 700px) {
     
     .tab-button{
         padding: 5px;

@@ -34,7 +34,7 @@
     transform: rotateZ(.5turn);
 }
 
-@media (min-width: 700px) and (orientation: landscape)
+@media (min-width: 700px)
 {
     .watch-time{
         font-size: 32px;

@@ -24,7 +24,7 @@
     place-self: flex-end;
 }
 
-@media (min-width: 700px) and (orientation: landscape) {
+@media (min-width: 700px) {
     .lap-row{
         font-size: 24px;
         min-width: 500px;

@@ -39,7 +39,7 @@
     font-size: 56px;
 }
 
-@media (min-width: 700px) and (orientation: landscape)
+@media (min-width: 700px)
 {
     .hg-common{
         min-height: 200px;
