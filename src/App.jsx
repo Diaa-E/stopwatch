@@ -23,7 +23,7 @@ function App({useDarkMode, requestNotification = () => Notification.requestPermi
   const [timerEditMode, setTimerEditMode] = useState(true);
   const [laps, setLaps] = useState([]);
 
-  const version = "1.0.0";
+  const version = "1.0.1";
 
   toggleMobileMode(setMobileMode);
 
