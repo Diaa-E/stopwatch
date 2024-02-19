@@ -4,12 +4,9 @@
     color: var(--accent);
     border: solid var(--accent) 3px;
     border-radius: 10px;
-    padding: 10px;
-    gap: 10px;
+    padding: 1dvh 2dvw;
     place-content: center;
     place-items: center;
-    cursor: pointer;
-    font-size: 20px;
 }
 
 .tab-button:active{
@@ -20,7 +17,7 @@
 .tab-button>img{
     will-change: filter;
     filter: var(--icon-accent);
-    height: 40px;
+    height: 5dvh;
     cursor: pointer;
 }
 
@@ -41,6 +38,9 @@
     
     .tab-button{
         padding: 5px;
+        font-size: 20px;
+        cursor: pointer;
+        gap: 10px;
     }
 
     .tab-button>img{
