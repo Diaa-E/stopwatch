@@ -9,8 +9,9 @@ import Stopwatch from './components/Stopwatch';
 import { v4 as generateId } from 'uuid';
 import Timer from './components/Timer';
 import About from './components/About';
+import alarmAudio from "./assets/audio/alarm.mp3";
 
-function App({useDarkMode, requestNotification = () => Notification.requestPermission()}) {
+function App({useDarkMode}) {
 
   const [mobileMode, setMobileMode] = useState(isSmallScreen());
   const [darkMode, setDarkMode] = useState(useDarkMode);
@@ -45,22 +46,9 @@ function App({useDarkMode, requestNotification = () => Notification.requestPermi
 
   function notifyTimerExpiry()
   {
-    if (!window.Notification)
-    {
-      alert("Time is up!");
-      console.alert("This browser does not support notifications.");
-    }
-    else if (Notification.permission === "granted")
-    {
-      const notification = new Notification("Time is up!");
-    }
+    const alarm = new Audio(alarmAudio);
+    alarm.play();
   }
-
-  useEffect(() => {
-
-   requestNotification();
-
-  }, []);
 
   useEffect(() => {
 

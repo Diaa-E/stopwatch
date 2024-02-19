@@ -36,12 +36,4 @@ describe("App component", () => {
 
         expect(screen.getByRole("main")).toHaveClass("common", "light");
     });
-
-    it("Requests notification permission on mount", () => {
-
-        const requestMock = vi.fn();
-        render(<App requestNotification={requestMock} />);
-
-        expect(requestMock).toHaveBeenCalledOnce();
-    });
 });
