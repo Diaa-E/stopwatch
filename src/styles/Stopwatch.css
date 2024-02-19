@@ -26,7 +26,7 @@
     .watch{
         min-height: calc(170px * 2.5);
         min-width: calc(170px * 2.5);
-        margin: 100px 0 0 0;
+        margin: 50px 0 0 0;
     }
 
     .stopwatch{
