@@ -1,7 +1,7 @@
 .stopwatch{
     display: grid;
     grid-auto-rows: min-content;
-    gap: 80px;
+    gap: 5vh;
 }
 
 .watch{
@@ -11,14 +11,14 @@
     min-height: 80vw;
     min-width: 80vw;
     place-self: center;
-    margin: 80px 0 0 0;
+    margin: 10vh 0 0 0;
 }
 
 .stopwatch-controls{
     display: flex;
     place-content: center;
     place-items: center;
-    gap: 20px;
+    gap: 5vw;
 }
 
 @media (min-width: 700px) {
@@ -31,5 +31,9 @@
 
     .stopwatch{
         gap: 40px;
+    }
+
+    .stopwatch-controls{
+        gap: 20px;
     }
 }
