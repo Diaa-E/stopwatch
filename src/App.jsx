@@ -26,8 +26,6 @@ function App({useDarkMode}) {
 
   const version = "1.1.0";
 
-  toggleMobileMode(setMobileMode);
-
   function toggleDarkMode()
   {
     setDarkMode(darkMode => !darkMode);
@@ -49,6 +47,14 @@ function App({useDarkMode}) {
     const alarm = new Audio(alarmAudio);
     alarm.play();
   }
+
+  useEffect(() => {
+
+    toggleMobileMode(setMobileMode);
+
+    return () => {};
+    
+  }, []);
 
   useEffect(() => {
 
