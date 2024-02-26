@@ -3,9 +3,3 @@
 A simple Stopwatch app, includes a countdown timer and regular stopwatch.
 
 [Live preview (gh-pages)](https://diaa-e.github.io/stopwatch/)
-
-## To do
-
-1. Fix timers lagging when tab loses focus
-2. ~~Add a looping sound effect when timer expires.~~ ✅
-3. Add clock ticking sound to stopwatch and timer.
