@@ -24,7 +24,7 @@ function App({useDarkMode}) {
   const [timerEditMode, setTimerEditMode] = useState(true);
   const [laps, setLaps] = useState([]);
 
-  const version = "1.1.0";
+  const version = "1.1.1";
 
   function toggleDarkMode()
   {
